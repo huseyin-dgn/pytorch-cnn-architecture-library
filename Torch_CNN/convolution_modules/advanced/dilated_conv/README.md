@@ -1,4 +1,4 @@
-## Dilated Convolution (Atrous Conv) — Kısa Açıklama
+## Dilated Convolution (Atrous Conv)
 
 Dilated conv’un olayı: **kernel boyutu büyümeden receptive field büyütmek.**  
 Yani 3×3 conv hâlâ 3×3 parametreyle çalışır ama örnekleme aralığı açılır.
