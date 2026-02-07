@@ -1,19 +1,9 @@
 import torch
 import torch.nn as nn
 import torch.nn.functional as F
-from torchvision.ops import DeformConv2d  # DCN implementasyonu (torchvision içinde)
-
+from torchvision.ops import DeformConv2d  
 
 class DeformableConvBlock(nn.Module):
-    """
-    Bu blokta:
-      - offset üreten bir Conv2d var
-      - asıl feature'ı işleyen DeformConv2d var
-      - ardından BN + ReLU geliyor
-
-    Klasik ConvBlock gibi düşünebilirsin, tek fark:
-      Conv2d yerine DeformConv2d + offset_conv kullanıyoruz.
-    """
     def __init__(self, in_channels, out_channels,
                  kernel_size=3, stride=1, padding=1, bias=False):
         super().__init__()
@@ -66,14 +56,6 @@ class DeformableConvBlock(nn.Module):
 
 
 class SmallDeformableCNN(nn.Module):
-    """
-    Örnek bir küçük CNN:
-      - İlk katman: normal Conv2d
-      - İkinci katman: DeformableConvBlock (DCN kullanıyor)
-      - Sonunda global average pooling + Linear (classification head)
-
-    Bunu kendi projende backbone iskeleti gibi düşünebilirsin.
-    """
     def __init__(self, in_channels=3, num_classes=10):
         super().__init__()
 
@@ -94,7 +76,7 @@ class SmallDeformableCNN(nn.Module):
             bias=False,
         )
 
-        # 3) Bir conv daha (istersen yine DCN ile değiştirebilirsin)
+        # 3) Bir conv daha 
         self.conv3 = nn.Sequential(
             nn.Conv2d(64, 128, kernel_size=3, stride=2, padding=1, bias=False),
             nn.BatchNorm2d(128),
@@ -106,9 +88,6 @@ class SmallDeformableCNN(nn.Module):
         self.fc = nn.Linear(128, num_classes)
 
     def forward(self, x):
-        """
-        x: (B, in_channels, H, W)
-        """
         # (B, 3, H, W) → (B, 32, H, W)
         x = self.conv1(x)
 

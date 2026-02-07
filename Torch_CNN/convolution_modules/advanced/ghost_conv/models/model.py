@@ -78,14 +78,6 @@ class GhostConv(nn.Module):
 # GhostBlock: GhostConv + (opsiyonel) residual
 # -------------------------------------------------
 class GhostBlock(nn.Module):
-    """
-    GhostConv tabanlı bir blok:
-    - GhostConv(c_in -> c_out, kernel_size=3)
-    - BN + aktivasyon GhostConv içinde zaten var
-    - (İsteğe bağlı) residual bağlantı:
-        * stride == 1 ve c_in == c_out ise identity
-        * aksi halde 1x1 conv ile kısayol
-    """
     def __init__(self, c_in, c_out, stride=1, ratio=2):
         super().__init__()
         self.stride = stride
@@ -127,16 +119,6 @@ class GhostBlock(nn.Module):
 # GhostConv tabanlı küçük CNN (CIFAR-10 gibi)
 # -------------------------------------------------
 class GhostNetSmall(nn.Module):
-    """
-    Giriş: (N, 3, 32, 32)
-
-    Yapı:
-    - Stem: 3x3 Conv (3 -> 16)
-    - Stage1: GhostBlock(16->16) x2  (32x32'de)
-    - Stage2: GhostBlock(16->32, stride=2) + GhostBlock(32->32)  (16x16'da)
-    - Stage3: GhostBlock(32->64, stride=2) + GhostBlock(64->64)  (8x8'de)
-    - GAP + FC
-    """
     def __init__(self, num_classes=10, ratio=2):
         super().__init__()
 

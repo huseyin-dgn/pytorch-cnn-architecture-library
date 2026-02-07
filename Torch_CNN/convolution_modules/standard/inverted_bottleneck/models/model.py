@@ -6,10 +6,6 @@ import torch.nn.functional as F
 # MBConv Bloğu
 # ----------------------
 class MBConv(nn.Module):
-    """
-    Inverted Bottleneck (MBConv) bloğu:
-    1x1 expand  -> 3x3 depthwise -> 1x1 project (+ residual)
-    """
     def __init__(self, c_in, c_out, expansion_factor=4, stride=1, kernel_size=3):
         super().__init__()
         self.stride = stride

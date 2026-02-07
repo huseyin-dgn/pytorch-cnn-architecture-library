@@ -7,17 +7,6 @@ import torch.nn.functional as F
 # 1×1 Pointwise + 3×3 Conv ile Basit Bir Blok
 # -------------------------------------------------
 class ConvPointwiseBlock(nn.Module):
-    """
-    Basit blok:
-    - 3x3 Conv (spatial)
-    - BN + ReLU
-    - 1x1 Pointwise Conv (channel mixing)
-    - BN + ReLU
-
-    Amaç:
-    - 3x3 ile uzamsal özellik çıkar
-    - 1x1 ile kanalları karıştır ve kanal sayısını ayarla
-    """
     def __init__(self, c_in, c_mid, c_out, stride=1):
         super().__init__()
         # 3x3 spatial conv

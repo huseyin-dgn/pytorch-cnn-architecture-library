@@ -77,13 +77,6 @@ def shift2d(
 # 2) SHIFT + 1x1 CONV BLOĞU
 # ------------------------------------------------------------
 class ShiftConvBlock(nn.Module):
-    """
-    ShiftConvBlock = Shift (parametresiz spatial mixing) + 1x1 Conv (öğrenilebilir channel mixing)
-
-    Neden 1x1 conv şart gibi?
-      Shift kanalı "konum" olarak karıştırır ama kanallar arası öğrenilebilir karışım sağlamaz.
-      1x1 conv => kanallar arası öğrenilebilir karışım (mixing) sağlar.
-    """
     def __init__(self, cin, cout, directions=None, stride=1, shift_mode="zero_pad"):
         super().__init__()
         self.directions = directions
@@ -111,12 +104,6 @@ class ShiftConvBlock(nn.Module):
 # 3) NET BİR MODEL: ShiftNetV2
 # ------------------------------------------------------------
 class ShiftNetV2(nn.Module):
-    """
-    Basit ama anlaşılır Shift tabanlı CNN:
-      Stem: klasik 3x3 (girişten ilk feature)
-      Stage1-3: ShiftConvBlock (stride=2 ile downsample)
-      Head: GAP + FC
-    """
     def __init__(self, in_channels=3, num_classes=10, directions=None):
         super().__init__()
 
@@ -158,7 +145,6 @@ class ShiftNetV2(nn.Module):
         if verbose: print("logits:", x.shape)
 
         return x
-
 
 # ------------------------------------------------------------
 # 4) ÇALIŞTIRMA

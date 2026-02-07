@@ -33,21 +33,6 @@ class ConvBNReLU(nn.Module):
 # - Residual (shortcut) var
 # -------------------------------------------------
 class DilatedBlock(nn.Module):
-    """
-    c_in -> c_out
-
-    Ana yol:
-      conv1: 3x3, dilation=1
-      conv2: 3x3, dilation=dilation
-
-    Shortcut:
-      - Eğer stride=1 ve c_in==c_out -> identity
-      - Yoksa 1x1 conv (stride ile downsample)
-
-    Bu blok ile:
-      - Hem downsample yapabiliyorsun (stride=2 ile),
-      - Hem de receptive field'i dilation ile büyütebiliyorsun.
-    """
     def __init__(self, c_in, c_out, stride=1, dilation=1):
         super().__init__()
 
