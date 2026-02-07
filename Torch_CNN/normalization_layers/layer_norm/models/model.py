@@ -3,10 +3,6 @@ import torch.nn as nn
 import torch.nn.functional as F
 
 class LayerNorm2d(nn.Module):
-    """
-    CNN (NCHW) için basit LayerNorm:
-    Her (H,W) noktasında kanallar (C) boyunca normalize eder.
-    """
     def __init__(self, num_channels: int, eps: float = 1e-5):
         super().__init__()
         self.eps = eps
