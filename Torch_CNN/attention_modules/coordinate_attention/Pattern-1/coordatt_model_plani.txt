@@ -1,0 +1,99 @@
+Tek Başına Coordinate Attention (CoordAtt) Tabanlı Conv-Attention Blok Tasarımı
+============================================================================
+
+Amaç
+-----
+Bu aşamada hedef, CBAM gibi başka bloklarla birleşime geçmeden önce “tek başına” çalışabilen,
+CNN içinde kullanılacak, stabil ve verimli bir Coordinate Attention (CoordAtt) bloğu geliştirmektir.
+
+Bu bloğun amacı:
+- Özellik haritasını (feature map) kanal bazlı yeniden ağırlıklandırırken konumsal (spatial) bilgiyi tamamen kaybetmemek,
+- 2D spatial attention maliyetine girmeden (7x7 gibi) H ve W eksenleri üzerinden yön-duyarlı (direction-aware)
+  dikkat üretmek,
+- Mobil/edge uyumlu olacak kadar hafif (parametre ve hesap) ve eğitimde “agresif bastırma” yapmayacak kadar stabil olmak.
+
+Model/Blok Ne Olacak?
+----------------------
+Geliştireceğimiz şey bir “blok”tur (nn.Module). Tek başına bir ağ (classification head vs.) değil;
+her CNN katmanına takılabilecek bir modül.
+
+Girdi/Çıktı Kontratı
+---------------------
+- Girdi:  X  ∈ R^{B x C x H x W}
+- Çıktı:  Y  ∈ R^{B x C x H x W}  (shape korunur)
+- Blok, girişten aldığı bilgiyi attention maskeleriyle çarparak yeniden ölçekler.
+
+Çekirdek Bileşenler (Mutlaka Olacaklar)
+---------------------------------------
+1) Eksen Bazlı Havuzlama (Coordinate Embedding)
+   - Height pooling: W boyunca ortalama -> (B, C, H, 1)
+   - Width  pooling: H boyunca ortalama -> (B, C, 1, W)
+   Not: “global” pooling gibi H ve W’yu aynı anda yok etmez. Konum sinyalini korur.
+
+2) Paylaşımlı Dönüşüm (Shared Transform)
+   - İki eksen temsili uygun şekilde birleştirilir (concat).
+   - 1x1 Conv ile kanal sıkıştırma yapılır: C -> C/r (r: reduction)
+   - BN + aktivasyon (tercihen h-swish veya ReLU)
+   Amaç: kanal ilişkilerini öğrenmek + maliyeti düşük tutmak.
+
+3) Ayrık Attention Başları (Split Heads)
+   - Height attention başı: 1x1 Conv -> sigmoid -> A_h ∈ R^{B x C x H x 1}
+   - Width  attention başı: 1x1 Conv -> sigmoid -> A_w ∈ R^{B x C x 1 x W}
+
+4) Yeniden Ölçekleme (Re-weighting)
+   - Y = X * A_h * A_w
+   - Bu çarpım aynı kanal için farklı h ve w konumlarında farklı ağırlıklar üretir.
+
+Stabilite ve Pratik Tasarım Notları (Bu Blokta Olmasını İstiyoruz)
+------------------------------------------------------------------
+A) Reduction (r) ve mid kanal alt sınırı
+   - mid = max(min_mid, C // r)
+   - min_mid tipik olarak 8 seçilir.
+   Neden: C küçükken C//r sıfıra düşmesin, kapasite tamamen yok olmasın.
+
+B) “Agresif bastırma” kontrolü
+   - Sigmoid çıktıları çok küçük değerlere kayarsa özellikler aşırı kısılabilir.
+   - Bu yüzden opsiyonel bir ölçek/karışım eklenebilir:
+       Y = X * (1 - alpha + alpha * (A_h * A_w))
+     Burada alpha ∈ [0,1] öğrenilebilir veya sabit.
+   - Başlangıç için alpha=1 yapılabilir; debug aşamasında alpha ile güvenli ayar yapılır.
+
+C) Residual uyumu
+   - Bu blok çoğu zaman residual bir yapı içinde kullanılacak.
+   - Eğer tek başına kullanılıyorsa bile shape koruduğu için residual eklemeye uygundur.
+
+D) Tipik kullanım yeri (CNN içinde)
+   - Bottleneck/Residual bloklarının sonunda,
+   - Ya da bir conv + norm + act dizisinden sonra.
+   - İlk prototipte: “Conv(3x3) -> Norm -> Act -> CoordAtt” şeklinde test edeceğiz.
+
+Bu Aşamada Kod Tarafında Yapılacaklar
+-------------------------------------
+1) Basit ve temiz bir CoordAtt sınıfı (PyTorch)
+   - forward() içinde pooling, concat, shared conv, split heads, sigmoid, çarpım.
+2) Sağlam debug çıktıları (opsiyonel)
+   - Shape kontrolü
+   - Mask istatistikleri (min/mean/max)
+   - Çıkış std oranı (out_std / in_std) gibi “bastırma” göstergeleri
+3) Küçük bir “sanity test”
+   - Rastgele tensorla forward çalıştırma
+   - Grad check (basit backward) ile patlama/NaN kontrolü
+
+Başarı Kriterleri
+------------------
+- Shape korunacak: (B, C, H, W) -> (B, C, H, W)
+- Maskeler mantıklı dağılımda olacak (tam 0’a çökme ya da tam 1’e yapışma olmamalı)
+- Eğitimde stabil: std_ratio çok aşırı düşük olmamalı (ör. sürekli 0.1-0.2 gibi)
+- Parametre maliyeti kontrol edilebilir olmalı (özellikle mid kanal ve r seçimiyle)
+
+Sonraki Adım (Bu tamamlandıktan sonra)
+---------------------------------------
+- CoordAtt bloğunu CBAM içine gömme varyantları:
+  (1) CBAM-CA + CoordAtt (SA kaldırılmış)
+  (2) CoordAtt + Micro-SA (depthwise hafif SA)
+  (3) Over-attention riskine karşı alpha/residual düzenleri
+
+Not
+----
+Bu doküman, “ne inşa edeceğiz ve neden” sorusuna cevap vermek için yazıldı.
+Bir sonraki adımda buradaki maddeleri kodlayıp test edeceğiz.

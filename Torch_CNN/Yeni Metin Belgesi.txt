@@ -1,0 +1,165 @@
+🔥 CNN Mimarisine Eklenebilecek Üst Seviye Teknikler (Sadece Başlık)
+1) Convolution Geliştirmeleri
+
+Depthwise Separable Convolution
+
+Pointwise Convolution
+
+Inverted Bottleneck Block
+
+Ghost Convolution
+
+Dilated Convolution
+
+Deformable Convolution
+
+Shift Convolution
+
+Octave Convolution
+
+dynamic conv + repvgg  + cordinat conv + gropus conv
+
+
+2) Residual / Block Yapıları
+
+Basic Residual Block
+
+Pre-activation Residual Block !!! 
+
+Wide Residual Block
+
+ResNeXt Grouped Convolution Block
+
+Bottleneck with Expansion !!! 
+
+Squeeze-Excite Residual Block !!!
+
+Residual + Attention Fusion Pattern
+
+3) Attention Tabanlı Bloklar
+
+SE (Squeeze-and-Excitation)
+
+ECA (Efficient Channel Attention)
+
+CBAM
+
+Coordinate Attention
+
+4) Normalization Katmanları
+
+Layer Normalization
+
+Group Normalization
+
+Instance Normalization
+
+Batch Renormalization
+
+Sync Batch Normalization
+
+Weight Standardization
+
+Frozen BatchNorm
+
+5) Aktivasyon Fonksiyonları
+
+LeakyReLU
+
+PReLU
+
+GELU
+
+Mish
+
+SiLU / Swish
+
+HardSwish
+
+6) Regularization Teknikleri
+
+DropBlock
+
+Spatial Dropout
+
+Stochastic Depth
+
+ShakeDrop
+
+Cutout (CNN içi mask-based regularization)
+
+7) Scaling Yaklaşımları
+
+Width Scaling
+
+Depth Scaling
+
+Resolution Scaling
+
+Compound Scaling (EfficientNet yaklaşımı)
+
+8) Feature Aggregation / Fusion
+
+Feature Pyramid Network (FPN)
+
+BiFPN (EfficientDet)
+
+PANet
+
+Dense Connections (DenseNet)
+
+Multi-scale residual fusion
+
+9) Pooling Yenilikleri
+
+Global Average Pooling
+
+Generalized Mean Pooling
+
+Adaptive Pooling
+
+Stochastic Pooling
+
+Spatial Pyramid Pooling (SPP)
+
+10) Output Head Tasarımları
+
+Linear classifier head
+
+MLP head
+
+GAP + Conv Head
+
+Multi-task heads
+
+Attention-based head
+
+11) Lightweight CNN Tasarım Teknikleri
+
+Depthwise bottleneck
+
+Channel shuffle (ShuffleNet)
+
+Ghost bottleneck
+
+Partial convolution
+
+Efficient stem layers
+
+12) Modern Training Improve Techniques (CNN Özel)
+
+Label Smoothing (classification)
+
+Mixup / CutMix (CNN training)
+
+Knowledge Distillation (CNN → CNN)
+
+13) Stabilite / Parametre İyileştirmeleri
+
+Weight Standardization
+
+Zero-Init Residual Branch
+
+Orthogonal Initialization
+
+Gradient Centralization

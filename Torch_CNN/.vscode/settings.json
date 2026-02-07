@@ -1,0 +1,16 @@
+{
+  "editor.inlineSuggest.enabled": false,
+
+  "editor.quickSuggestions": {
+    "comments": "on",
+    "strings": "on",
+    "other": "on"
+  },
+  "editor.suggestOnTriggerCharacters": true,
+  "editor.parameterHints.enabled": true,
+
+  "editor.snippetSuggestions": "top",
+  "editor.tabCompletion": "on",
+  "editor.suggest.snippetsPreventQuickSuggestions": false,
+  "git.ignoreLimitWarning": true
+}
