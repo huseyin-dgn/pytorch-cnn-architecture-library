@@ -217,7 +217,9 @@ CUDA kullanıyorsanız:
 
 # ⚡ Quick Start
 
-git clone [<repo-url>](https://github.com/huseyin-dgn/pytorch-cnn-architecture-library)
+```text
+git clone https://github.com/huseyin-dgn/pytorch-cnn-architecture-library
 cd Torch_CNN
 pip install -r requirements.txt
 python -m torch_cnn.scripts.train --epochs 10 --conv dynamic --norm bn --act relu --attn cbam
+```
