@@ -95,6 +95,12 @@ Aşağıdaki sonuçlar, kütüphanedeki modüllerin birlikte kullanıldığı te
   
 Bu görseller, eğitim sürecinin genel davranışını ve modelin kararlılığını özetlemek amacıyla sunulmuştur.
 
+- **Yapılan çalışmayı derlemek için aşağıdaki terminal komutlarını kullanınız.**
+
+Train: `cd Torch_CNN python -m torch_cnn.scripts.train --epochs 10 --conv dynamic --norm bn --act relu --attn`
+
+Eval : `python scripts/eval.py --ckpt results/checkpoints/reference_net_last.pt`
+
 <p align="center">
   <img src="Torch_CNN/torch_cnn/runs/cards_summary.png" height="260"/>
   <img src="Torch_CNN/torch_cnn/runs/compact_overview_ema.png" height="260"/>
