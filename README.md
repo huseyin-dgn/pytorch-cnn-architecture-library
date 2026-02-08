@@ -98,14 +98,14 @@ Bu yaklaşım, mimari seçimleri sezgisel değil, **veriye dayalı** hale getiri
 ## 4. Klasör Yapısı
 
 Her konu aşağıdaki standart klasör yapısını takip eder:
-
+```text
 topic_name/
 │
 ├── notes/ → Teorik açıklamalar ve notebook’lar
 ├── models/ → PyTorch implementasyonları (import edilebilir)
 ├── experiments/ → Karşılaştırmalı deney konfigürasyonları
 └── assets/ → Grafikler, diyagramlar ve deney çıktıları
-
+```
 
 
 | Klasör | Rol |
