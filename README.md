@@ -80,23 +80,25 @@ kontrollü deneyler ile etkilerini karşılaştırır.
 
 ---
 
-## 📊 Experimental Snapshot
+## 📊 **Referans Deney Konfigürasyonu**
 
-Kütüphanedeki modüllerin birlikte çalışmasını göstermek amacıyla tek bir referans konfigürasyon eğitildi.
+Bu vitrin çıktıları aşağıdaki mimari bileşen kombinasyonu ile elde edilmiştir:
 
-**Model Bileşenleri**
-- Dynamic Convolution  
-- Batch Normalization  
-- ReLU aktivasyon  
-- Residual yapı  
-- Attention mekanizması  
-- CIFAR-10 standart eğitim protokolü  
+- **Convolution Layer:** Dynamic Convolution  
+- **Normalization:** Batch Normalization (BN)  
+- **Activation Function:** ReLU  
+- **Residual Structure:** Pre-activation residual pattern  
+- **Attention Mechanism:** Channel + Spatial attention fusion  
+- **Feature Aggregation:** Global Average Pooling  
+- **Classifier Head:** Fully Connected Linear Layer  
+- **Training Protocol:** CIFAR-10, standart veri artırma ve sabit deney ayarları  
+  
 
-Aşağıdaki görseller bu deneyin özet performans çıktılarıdır:
+Aşağıdaki görseller deneyin özet performans çıktılarıdır:
 
 <p align="center">
-  <img src="Torch_CNN/torch_cnn/runs/cards_summary.png" width="48%" />
-  <img src="Torch_CNN/torch_cnn/runs/compact_overview_ema.png" width="48%" />
+  <img src="Torch_CNN/torch_cnn/runs/cards_summary.png" height="260"/>
+  <img src="Torch_CNN/torch_cnn/runs/compact_overview_ema.png" height="260"/>
 </p>
 
 ---
