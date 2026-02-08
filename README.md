@@ -82,7 +82,7 @@ kontrollü deneyler ile etkilerini karşılaştırır.
 
 ## 📊 **Referans Deney Konfigürasyonu**
 
-Bu vitrin çıktıları aşağıdaki mimari bileşen kombinasyonu ile elde edilmiştir:
+Aşağıdaki sonuçlar, kütüphanedeki modüllerin birlikte kullanıldığı tek bir referans deney konfigürasyonundan elde edilmiştir
 
 - **Convolution Layer:** Dynamic Convolution  
 - **Normalization:** Batch Normalization (BN)  
@@ -93,8 +93,7 @@ Bu vitrin çıktıları aşağıdaki mimari bileşen kombinasyonu ile elde edilm
 - **Classifier Head:** Fully Connected Linear Layer  
 - **Training Protocol:** CIFAR-10, standart veri artırma ve sabit deney ayarları  
   
-
-Aşağıdaki görseller deneyin özet performans çıktılarıdır:
+Bu görseller, eğitim sürecinin genel davranışını ve modelin kararlılığını özetlemek amacıyla sunulmuştur.
 
 <p align="center">
   <img src="Torch_CNN/torch_cnn/runs/cards_summary.png" height="260"/>
