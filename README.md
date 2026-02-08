@@ -99,7 +99,7 @@ Bu görseller, eğitim sürecinin genel davranışını ve modelin kararlılığ
 
 Train:
 `cd Torch_CNN
-python -m torch_cnn.scripts.train --epochs 10 --conv dynamic --norm bn --act relu --attn`
+python -m torch_cnn.scripts.train --epochs 10 --conv dynamic --norm bn --act relu --attn cbam`
 
 
 Eval : `python scripts/eval.py --ckpt results/checkpoints/reference_net_last.pt`
@@ -110,6 +110,36 @@ Eval : `python scripts/eval.py --ckpt results/checkpoints/reference_net_last.pt`
 </p>
 
 ---
+
+## 🔬 Comparisons Index (Controlled Experiments)
+
+Bu repodaki tüm kontrollü kıyas notebook’ları ilgili modül klasörleri altında bulunur.  
+Standart kural: Karşılaştırmalar **`to_compare/`** veya **`_comparisons/`** klasörlerinde yer alır.
+
+
+### ⚡ Activation Functions
+
+- [Swish vs HardSwish](./Torch_CNN/activation_functions/Egde/HardSwish/to_compare/swish_vs_hardswish.ipynb)
+- [Sigmoid vs HardSigmoid](./Torch_CNN/activation_functions/Egde/HardSigmoid/to_compare/sigmoid_vs_hardsigmoid.ipynb)
+- [ReLU vs PReLU vs LeakyReLU vs SiLU](./Torch_CNN/activation_functions/Core/_comparisons/relu_prelu_leakyrelu_silu_compare.ipynb)
+
+
+### 🧩 Convolution Modules
+
+- [12 Conv Block Benchmark](./Torch_CNN/convolution_modules/_comparisons/conv_benchmark_12_blocks.ipynb)
+
+
+
+### 🧠 Normalization Layers
+
+- [Normalization Layer Comparisons](./Torch_CNN/normalization_layers/models/Norm_Karşılaştırmaları.ipynb)
+
+
+
+📌 Not: Her karşılaştırma aynı backbone, aynı optimizer, aynı veri bölünmesi ve aynı seed ile çalıştırılmış kontrollü deneylerdir.
+
+---
+
 ## 3. Mimari Tasarım Yaklaşımı
 
 Bu kütüphane, CNN’leri tek parça modeller olarak değil,
