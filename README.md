@@ -97,7 +97,10 @@ Bu görseller, eğitim sürecinin genel davranışını ve modelin kararlılığ
 
 - **Yapılan çalışmayı derlemek için aşağıdaki terminal komutlarını kullanınız.**
 
-Train: `cd Torch_CNN python -m torch_cnn.scripts.train --epochs 10 --conv dynamic --norm bn --act relu --attn`
+Train:
+`cd Torch_CNN
+python -m torch_cnn.scripts.train --epochs 10 --conv dynamic --norm bn --act relu --attn`
+
 
 Eval : `python scripts/eval.py --ckpt results/checkpoints/reference_net_last.pt`
 
@@ -196,3 +199,25 @@ Amaç, mimari kararları sezgiye değil,
 ---
 
 **Bu proje bir model koleksiyonu değil, bir CNN mimari araştırma laboratuvarıdır.**
+
+----
+
+# 📦 Requirements
+
+Python 3.10+ önerilir.
+
+- **pip install -r requirements.txt**
+
+
+CUDA kullanıyorsanız:
+
+- **pip install torch torchvision torchaudio --index-url https://download.pytorch.org/whl/cu121**
+
+---
+
+# ⚡ Quick Start
+
+git clone [<repo-url>](https://github.com/huseyin-dgn/pytorch-cnn-architecture-library)
+cd Torch_CNN
+pip install -r requirements.txt
+python -m torch_cnn.scripts.train --epochs 10 --conv dynamic --norm bn --act relu --attn cbam
