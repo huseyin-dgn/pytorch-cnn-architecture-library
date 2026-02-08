@@ -80,6 +80,66 @@ kontrollü deneyler ile etkilerini karşılaştırır.
 
 ---
 
+## 📊 **Referans Deney Konfigürasyonu**
+
+Aşağıdaki sonuçlar, kütüphanedeki modüllerin birlikte kullanıldığı tek bir referans deney konfigürasyonundan elde edilmiştir
+
+- **Convolution Layer:** Dynamic Convolution  
+- **Normalization:** Batch Normalization (BN)  
+- **Activation Function:** ReLU  
+- **Residual Structure:** Pre-activation residual pattern  
+- **Attention Mechanism:** Channel + Spatial attention fusion  
+- **Feature Aggregation:** Global Average Pooling  
+- **Classifier Head:** Fully Connected Linear Layer  
+- **Training Protocol:** CIFAR-10, standart veri artırma ve sabit deney ayarları  
+  
+Bu görseller, eğitim sürecinin genel davranışını ve modelin kararlılığını özetlemek amacıyla sunulmuştur.
+
+- **Yapılan çalışmayı derlemek için aşağıdaki terminal komutlarını kullanınız.**
+
+Train:
+`cd Torch_CNN
+python -m torch_cnn.scripts.train --epochs 10 --conv dynamic --norm bn --act relu --attn cbam`
+
+
+Eval : `python scripts/eval.py --ckpt results/checkpoints/reference_net_last.pt`
+
+<p align="center">
+  <img src="Torch_CNN/torch_cnn/runs/cards_summary.png" height="260"/>
+  <img src="Torch_CNN/torch_cnn/runs/compact_overview_ema.png" height="260"/>
+</p>
+
+---
+
+## 🔬 Comparisons Index (Controlled Experiments)
+
+Bu repodaki tüm kontrollü kıyas notebook’ları ilgili modül klasörleri altında bulunur.  
+Standart kural: Karşılaştırmalar **`to_compare/`** veya **`_comparisons/`** klasörlerinde yer alır.
+
+
+### ⚡ Activation Functions
+
+- [Swish vs HardSwish](./Torch_CNN/activation_functions/Egde/HardSwish/to_compare/swish_vs_hardswish.ipynb)
+- [Sigmoid vs HardSigmoid](./Torch_CNN/activation_functions/Egde/HardSigmoid/to_compare/sigmoid_vs_hardsigmoid.ipynb)
+- [ReLU vs PReLU vs LeakyReLU vs SiLU](./Torch_CNN/activation_functions/Core/_comparisons/relu_prelu_leakyrelu_silu_compare.ipynb)
+
+
+### 🧩 Convolution Modules
+
+- [12 Conv Block Benchmark](./Torch_CNN/convolution_modules/_comparisons/conv_benchmark_12_blocks.ipynb)
+
+
+
+### 🧠 Normalization Layers
+
+- [Normalization Layer Comparisons](./Torch_CNN/normalization_layers/models/Norm_Karşılaştırmaları.ipynb)
+
+
+
+📌 Not: Her karşılaştırma aynı backbone, aynı optimizer, aynı veri bölünmesi ve aynı seed ile çalıştırılmış kontrollü deneylerdir.
+
+---
+
 ## 3. Mimari Tasarım Yaklaşımı
 
 Bu kütüphane, CNN’leri tek parça modeller olarak değil,
@@ -169,3 +229,27 @@ Amaç, mimari kararları sezgiye değil,
 ---
 
 **Bu proje bir model koleksiyonu değil, bir CNN mimari araştırma laboratuvarıdır.**
+
+----
+
+# 📦 Requirements
+
+Python 3.10+ önerilir.
+
+- **pip install -r requirements.txt**
+
+
+CUDA kullanıyorsanız:
+
+- **pip install torch torchvision torchaudio --index-url https://download.pytorch.org/whl/cu121**
+
+---
+
+# ⚡ Quick Start
+
+```text
+git clone https://github.com/huseyin-dgn/pytorch-cnn-architecture-library
+cd Torch_CNN
+pip install -r requirements.txt
+python -m torch_cnn.scripts.train --epochs 10 --conv dynamic --norm bn --act relu --attn cbam
+```
