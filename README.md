@@ -163,7 +163,7 @@ topic_name/
 │
 ├── notes/ → Teorik açıklamalar ve notebook’lar
 ├── models/ → PyTorch implementasyonları (import edilebilir)
-├── experiments/ → Karşılaştırmalı deney konfigürasyonları
+├── to_compose/ → Karşılaştırmalı deney konfigürasyonları
 └── assets/ → Grafikler, diyagramlar ve deney çıktıları
 ```
 
@@ -172,7 +172,7 @@ topic_name/
 |--------|-----|
 | notes | Matematiksel ve kavramsal açıklamalar |
 | models | Tekrar kullanılabilir PyTorch modülleri |
-| experiments | Kontrollü karşılaştırma ortamı |
+| to_compose | Kontrollü karşılaştırma ortamı |
 | assets | Sonuç görselleştirme ve analiz materyalleri |
 
 ---
