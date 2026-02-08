@@ -80,6 +80,26 @@ kontrollü deneyler ile etkilerini karşılaştırır.
 
 ---
 
+## 📊 Experimental Snapshot
+
+Kütüphanedeki modüllerin birlikte çalışmasını göstermek amacıyla tek bir referans konfigürasyon eğitildi.
+
+**Model Bileşenleri**
+- Dynamic Convolution  
+- Batch Normalization  
+- ReLU aktivasyon  
+- Residual yapı  
+- Attention mekanizması  
+- CIFAR-10 standart eğitim protokolü  
+
+Aşağıdaki görseller bu deneyin özet performans çıktılarıdır:
+
+<p align="center">
+  <img src="Torch_CNN/torch_cnn/runs/cards_summary.png" width="48%" />
+  <img src="Torch_CNN/torch_cnn/runs/compact_overview_ema.png" width="48%" />
+</p>
+
+---
 ## 3. Mimari Tasarım Yaklaşımı
 
 Bu kütüphane, CNN’leri tek parça modeller olarak değil,
