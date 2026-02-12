@@ -1,6 +1,12 @@
 # PyTorch CNN Architecture Library
 
-Modüler CNN blokları (DynamicConv, Attention, Residual, Norm) ile deney yapmaya uygun referans yapı.
+Modüler CNN blokları (DynamicConv, Attention, Residual, Norm) ile deney yapmaya uygun referans yapı.İlk 5 kavramı referans alır.
+
+- Konvolüsyon varyantı seçimi
+- Normalizasyon stratejisi
+- Aktivasyon fonksiyonu
+- Residual blok tasarımı
+- Attention mekanizması
 
 ---
 

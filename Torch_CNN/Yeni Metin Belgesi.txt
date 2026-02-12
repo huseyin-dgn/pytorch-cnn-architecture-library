@@ -76,88 +76,14 @@ HardSwish
 
 6) Regularization Teknikleri
 
-DropBlock
+DropBlock ❗ - 
 
-Spatial Dropout
+Spatial Dropout ❗ - 
 
-Stochastic Depth
+DropPath (Generalized Stochastic Depth) ❗ - 
 
-ShakeDrop
+Stochastic Depth ❗ - 
 
-Cutout (CNN içi mask-based regularization)
+Cutout ❗ -
 
-7) Scaling Yaklaşımları
-
-Width Scaling
-
-Depth Scaling
-
-Resolution Scaling
-
-Compound Scaling (EfficientNet yaklaşımı)
-
-8) Feature Aggregation / Fusion
-
-Feature Pyramid Network (FPN)
-
-BiFPN (EfficientDet)
-
-PANet
-
-Dense Connections (DenseNet)
-
-Multi-scale residual fusion
-
-9) Pooling Yenilikleri
-
-Global Average Pooling
-
-Generalized Mean Pooling
-
-Adaptive Pooling
-
-Stochastic Pooling
-
-Spatial Pyramid Pooling (SPP)
-
-10) Output Head Tasarımları
-
-Linear classifier head
-
-MLP head
-
-GAP + Conv Head
-
-Multi-task heads
-
-Attention-based head
-
-11) Lightweight CNN Tasarım Teknikleri
-
-Depthwise bottleneck
-
-Channel shuffle (ShuffleNet)
-
-Ghost bottleneck
-
-Partial convolution
-
-Efficient stem layers
-
-12) Modern Training Improve Techniques (CNN Özel)
-
-Label Smoothing (classification)
-
-Mixup / CutMix (CNN training)
-
-Knowledge Distillation (CNN → CNN)
-
-13) Stabilite / Parametre İyileştirmeleri
-
-Weight Standardization
-
-Zero-Init Residual Branch
-
-Orthogonal Initialization
-
-Gradient Centralization
+7) FPN
