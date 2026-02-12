@@ -78,6 +78,13 @@ kontrollü deneyler ile etkilerini karşılaştırır.
 - SiLU (Swish)
 - HardSwish
 
+### 2.6 Regularization Teknikleri
+- DropBlock
+- DroPath
+- Cutout
+- Speatial Dropout
+- Stochastic Depth
+
 ---
 
 ## 📊 **Referans Deney Konfigürasyonu**
@@ -128,6 +135,20 @@ Standart kural: Karşılaştırmalar **`to_compare/`** veya **`_comparisons/`** 
 ### 🧠 Normalization Layers
 
 - [Normalization Layer Comparisons](./Torch_CNN/normalization_layers/models/Norm_Karşılaştırmaları.ipynb)
+
+### ⚡ Regularization Teknikleri
+
+Aşağıda CIFAR-100 üzerinde yaptığım karşılaştırma notebook’ları yer alıyor:
+
+- **DropBlock vs DropPath (2 model)**
+  - [`cifar100_2models_DropBlocks_DropPath.ipynb`](Torch_CNN/regularization_techniques/_comparisons/cifar100_2models_DropBlocks_DropPath.ipynb)
+
+- **Baseline vs DropBlock vs SpatialDropout (3 model)**
+  - [`cifar100_3models_Baseline_DropBlocks_SpatialDropoutt.ipynb`](Torch_CNN/regularization_techniques/_comparisons/cifar100_3models_Baseline_DropBlocks_SpatialDropoutt.ipynb)
+
+- **Baseline vs DropPath vs StochasticDepth (3 model)**
+  - [`cifar100_3models_Baseline_DropPath_StochasticDepth.ipynb`](Torch_CNN/regularization_techniques/_comparisons/cifar100_3models_Baseline_DropPath_StochasticDepth.ipynb)
+
 
 📌 Not: Her karşılaştırma aynı backbone, aynı optimizer, aynı veri bölünmesi ve aynı seed ile çalıştırılmış kontrollü deneylerdir.
 
