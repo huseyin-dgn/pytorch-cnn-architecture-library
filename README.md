@@ -122,35 +122,43 @@ Eval : `python scripts/eval.py --ckpt results/checkpoints/reference_net_last.pt`
 Bu repodaki tüm kontrollü kıyas notebook’ları ilgili modül klasörleri altında bulunur.  
 Standart kural: Karşılaştırmalar **`to_compare/`** veya **`_comparisons/`** klasörlerinde yer alır.
 
+---
+
 ### ⚡ Activation Functions
 
 - [Swish vs HardSwish](./Torch_CNN/activation_functions/Egde/HardSwish/to_compare/swish_vs_hardswish.ipynb)
 - [Sigmoid vs HardSigmoid](./Torch_CNN/activation_functions/Egde/HardSigmoid/to_compare/sigmoid_vs_hardsigmoid.ipynb)
 - [ReLU vs PReLU vs LeakyReLU vs SiLU](./Torch_CNN/activation_functions/Core/_comparisons/relu_prelu_leakyrelu_silu_compare.ipynb)
 
+---
+
 ### 🧩 Convolution Modules
 
 - [12 Conv Block Benchmark](./Torch_CNN/convolution_modules/_comparisons/conv_benchmark_12_blocks.ipynb)
+
+---
 
 ### 🧠 Normalization Layers
 
 - [Normalization Layer Comparisons](./Torch_CNN/normalization_layers/models/Norm_Karşılaştırmaları.ipynb)
 
-### ⚡ Regularization Teknikleri
+---
 
-Aşağıda CIFAR-100 üzerinde yaptığım karşılaştırma notebook’ları yer alıyor:
+### ⚡ Regularization Techniques (CIFAR-100)
 
-- **DropBlock vs DropPath (2 model)**
-  - [`cifar100_2models_DropBlocks_DropPath.ipynb`](Torch_CNN/regularization_techniques/_comparisons/cifar100_2models_DropBlocks_DropPath.ipynb)
+Aşağıdaki notebook’lar CIFAR-100 üzerinde gerçekleştirilmiş kontrollü regularization deneylerini içerir:
 
-- **Baseline vs DropBlock vs SpatialDropout (3 model)**
-  - [`cifar100_3models_Baseline_DropBlocks_SpatialDropoutt.ipynb`](Torch_CNN/regularization_techniques/_comparisons/cifar100_3models_Baseline_DropBlocks_SpatialDropoutt.ipynb)
+- **DropBlock vs DropPath (2 Models)**
+  - [`cifar100_2models_DropBlocks_DropPath.ipynb`](./Torch_CNN/regularization_techniques/_comparisons/cifar100_2models_DropBlocks_DropPath.ipynb)
 
-- **Baseline vs DropPath vs StochasticDepth (3 model)**
-  - [`cifar100_3models_Baseline_DropPath_StochasticDepth.ipynb`](Torch_CNN/regularization_techniques/_comparisons/cifar100_3models_Baseline_DropPath_StochasticDepth.ipynb)
+- **Baseline vs DropBlock vs SpatialDropout (3 Models)**
+  - [`cifar100_3models_Baseline_DropBlocks_SpatialDropoutt.ipynb`](./Torch_CNN/regularization_techniques/_comparisons/cifar100_3models_Baseline_DropBlocks_SpatialDropoutt.ipynb)
 
+- **Baseline vs DropPath vs StochasticDepth (3 Models)**
+  - [`cifar100_3models_Baseline_DropPath_StochasticDepth.ipynb`](./Torch_CNN/regularization_techniques/_comparisons/cifar100_3models_Baseline_DropPath_StochasticDepth.ipynb)
 
-📌 Not: Her karşılaştırma aynı backbone, aynı optimizer, aynı veri bölünmesi ve aynı seed ile çalıştırılmış kontrollü deneylerdir.
+📌 **Not:**  
+Tüm karşılaştırmalar aynı backbone, aynı optimizer, aynı veri bölünmesi ve sabit random seed kullanılarak gerçekleştirilmiş kontrollü deneylerdir.
 
 ---
 
