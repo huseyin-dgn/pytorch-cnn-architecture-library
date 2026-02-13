@@ -15,19 +15,9 @@ regularization_techniques/
 ├─ path_based/
 │  ├─ drop_path/              # ❗ Zorunlu
 │  ├─ stochastic_depth/       # ❗ Zorunlu
-│  ├─ shakedrop/
 │
 ├─ mask_based/
 │  ├─ cutout/                 # ❗ Zorunlu
-│
-├─ feature_level/
-│  ├─ mixstyle/
-│
-├─ loss_level/
-│  ├─ label_smoothing/
-│  ├─ r_drop/
-│
-├─ __init__.py
 └─ README.md
 ```
 
