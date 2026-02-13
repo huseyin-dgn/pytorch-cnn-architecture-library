@@ -76,14 +76,14 @@ HardSwish
 
 6) Regularization Teknikleri
 
-DropBlock ❗ - 
+DropBlock 
 
-Spatial Dropout ❗ - 
+Spatial Dropout ❗
 
-DropPath (Generalized Stochastic Depth) ❗ - 
+DropPath (Generalized Stochastic Depth) 
 
-Stochastic Depth ❗ - 
+Stochastic Depth  
 
-Cutout ❗ -
+Cutout 
 
 7) FPN
