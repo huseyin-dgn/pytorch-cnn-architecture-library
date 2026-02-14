@@ -237,8 +237,58 @@ Değerlendirilen metrikler:
 - Kod ve teori bütünlüğü
 
 ---
+## 7. Temsil Öğrenimi Notları
 
-## 7. Hedef Kitle
+Bu bölüm, konvolüsyonel sinir ağları ve YOLO tabanlı mimarilerde temsil öğreniminin
+yapısal ve matematiksel temellerine ilişkin teknik soruların sistematik analizini içerir.
+Amaç, modül tanımından ziyade tasarım ilkelerini ve optimizasyon dinamiklerini açıklığa kavuşturmaktır.
+
+#### Normalizasyon ve Öğrenilebilir Parametreler
+
+- Normalizasyon katmanlarında mean=0 ve std=1 yaklaşımının optimizasyon üzerindeki etkisi nedir?
+- Gamma (γ) ve Beta (β) parametrelerinin teorik gerekçesi nedir?
+- Bu parametreler hangi temsil sınırlamasını ortadan kaldırır?
+
+
+
+#### Konvolüsyonel Tasarım Parametreleri
+
+- Kernel size, padding ve stride seçiminde temel belirleyiciler nelerdir?
+- Problem yapısına göre bu hiperparametreler nasıl hesaplanmalıdır?
+- Konvolüsyon filtrelerinin öğrenim süreci ve sıralama problemi nasıl değerlendirilmelidir?
+
+#### Çok Ölçekli Yapılar ve Backbone Organizasyonu
+
+- C2–C5 seviyeleri hangi yapısal karşılığı ifade eder?
+- Çok ölçekli görevlerde stage organizasyonu neden kritiktir?
+- Ek seviye (C6 ve sonrası) tasarımları hangi koşullarda anlamlıdır?
+- Element-wise toplama residual yapılarda hangi rolü üstlenir?
+
+#### Regularization Mekanizmaları
+
+- Spatial Dropout, DropBlock ve Stochastic Depth’in çalışma prensibi nedir?
+- Bu yöntemler genelleme performansını hangi mekanizma üzerinden etkiler?
+- Seçim kriterleri hangi koşullara bağlıdır?
+
+#### Attention ve Norm Varyasyonları
+
+- Farklı attention ve norm mekanizmalarının matematiksel kalıpları nasıl sınıflandırılabilir?
+- Bu yapıların ortak temsili şablonları nelerdir?
+
+## YOLO Mimarisi ve Tasarım Kararları
+
+- Bu kavramlar YOLO mimarisine hangi ilkelerle entegre edilmelidir?
+- Mimari kararlar deneysel mi yoksa ilkesel temellere mi dayanmalıdır?
+- Daha iyi bir YOLO backbone hangi performans ve maliyet ölçütlerine göre tasarlanmalıdır?
+
+#### Eğitim Öncesi Yapısal Değerlendirme
+
+- Model eğitime başlamadan önce yapısal doğruluk nasıl analiz edilir?
+- Eksikler eğitim öncesi hangi yöntemlerle belirlenebilir?
+
+---
+
+## 8. Hedef Kitle
 
 Bu proje aşağıdaki kullanıcılar için uygundur:
 
@@ -249,7 +299,7 @@ Bu proje aşağıdaki kullanıcılar için uygundur:
 
 ---
 
-## 8. Uzun Vadeli Hedef
+## 9. Uzun Vadeli Hedef
 
 Bu depo, CNN mimari bileşenleri için
 **deneysel referans kütüphanesi** oluşturmayı amaçlar.
