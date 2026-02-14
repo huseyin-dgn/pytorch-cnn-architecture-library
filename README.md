@@ -131,7 +131,6 @@ Eval : `python scripts/eval.py --ckpt results/checkpoints/reference_net_last.pt`
 Bu repodaki tüm kontrollü kıyas notebook’ları ilgili modül klasörleri altında bulunur.  
 Standart kural: Karşılaştırmalar `to_compare/` veya `_comparisons/` klasörlerinde yer alır.
 
----
 
 ### ⚡ Activation Functions
 
@@ -144,21 +143,20 @@ Standart kural: Karşılaştırmalar `to_compare/` veya `_comparisons/` klasörl
 - **ReLU vs PReLU vs LeakyReLU vs SiLU**  
   [`relu_prelu_leakyrelu_silu_compare.ipynb`](./Torch_CNN/activation_functions/Core/_comparisons/relu_prelu_leakyrelu_silu_compare.ipynb)
 
----
 
 ### 🧩 Convolution Modules
 
 - **12 Conv Block Benchmark**  
   [`conv_benchmark_12_blocks.ipynb`](./Torch_CNN/convolution_modules/_comparisons/conv_benchmark_12_blocks.ipynb)
 
----
+
 
 ### 🧠 Normalization Layers
 
 - **Normalization Layer Comparisons**  
   [`Norm_Karşılaştırmaları.ipynb`](./Torch_CNN/normalization_layers/models/Norm_Karşılaştırmaları.ipynb)
 
----
+
 
 ### ⚡ Regularization Techniques (CIFAR-100)
 
@@ -173,7 +171,6 @@ Aşağıdaki notebook’lar CIFAR-100 üzerinde gerçekleştirilmiş kontrollü 
 - **Baseline vs DropPath vs StochasticDepth (3 Models)**  
   [`cifar100_3models_Baseline_DropPath_StochasticDepth.ipynb`](./Torch_CNN/regularization_techniques/_comparisons/cifar100_3models_Baseline_DropPath_StochasticDepth.ipynb)
 
----
 
 📌 **Not:**  
 Tüm karşılaştırmalar aynı backbone, aynı optimizer, aynı veri bölünmesi ve sabit random seed kullanılarak gerçekleştirilmiş kontrollü deneylerdir.
