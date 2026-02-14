@@ -20,6 +20,7 @@ Modern CNN performansı yalnızca ağ derinliği veya parametre sayısı ile aç
 - Aktivasyon fonksiyonu
 - Residual blok tasarımı
 - Attention mekanizması
+- FPN Mimarisi
 
 Bu proje, bu bileşenleri **bağımsız modüller** olarak ele alır ve
 kontrollü deneyler ile etkilerini karşılaştırır.
@@ -84,6 +85,14 @@ kontrollü deneyler ile etkilerini karşılaştırır.
 - Cutout
 - Speatial Dropout
 - Stochastic Depth
+
+### 2.7 FPN
+- C2–C5 → P2–P5 top-down piramit yapısı
+- Lateral 1×1 conv ile kanal hizalama
+- Upsample + Add feature fusion
+- 3×3 Smooth conv ile çıktı iyileştirme
+- Nearest / Bilinear upsample opsiyonu
+- BN ve aktivasyon opsiyonel destek
 
 ---
 
