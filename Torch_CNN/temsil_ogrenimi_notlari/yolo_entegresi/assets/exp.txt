@@ -1,0 +1,7 @@
+
+Exp	Değişiklik	Beklenti	Ölç
+0	E0	Baseline	Referans	mAP_s/m/l, FPS, VRAM
+1	E1	BN→GN	Küçük batch stabil	mAP + run-to-run std
+2	E2	Neck: CBAM	Fusion iyileşir	mAP_small, FP analizi
+3	E3	Backbone: SE (mid)	Channel seçicilik	mAP, latency
+4	E4	Downsample yöntemi	Aliasing azalır	mAP_small + görsel hata

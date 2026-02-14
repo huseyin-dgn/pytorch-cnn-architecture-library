@@ -1,0 +1,9 @@
+
+Idea	Gain	Risk	Cost	BestFor	Score
+1	Confidence calibration (temp scaling / quality...	3	2	1	high-conf FP	1.5
+2	Label audit + hard-negative mining	4	2	3	noisy labels / imbalance	1.5
+0	Anti-alias downsample (BlurPool/low-pass)	3	2	2	small objects + clutter	1.0
+3	Loss/assignment tuning (IoU variants etc.)	3	3	2	localization errors	0.5
+5	Domain adaptation / test-time norm adapt	4	4	4	domain shift	0.0
+6	Post-NMS relation refinement (graph-lite)	2	3	2	close objects	-0.5
+4	Limited dynamic sampling (deformable in neck)	3	4	4	overlap / geometry	-1.0

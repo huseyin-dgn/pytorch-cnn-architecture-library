@@ -1,0 +1,5 @@
+obj≈6px -> [(8, 0.75), (16, 0.375), (32, 0.1875)] | Uyarı: Nesne çok küçük; stride 8 bile yetmiyor. Çözünürlük/augment/neck iyileştirme düşün.
+obj≈12px -> [(8, 1.5), (16, 0.75), (32, 0.375)] | Uyarı: Nesne çok küçük; stride 8 bile yetmiyor. Çözünürlük/augment/neck iyileştirme düşün.
+obj≈20px -> [(8, 2.5), (16, 1.25), (32, 0.625)] | Öneri: stride 8 seviyesi yeterli (≈2.50 cell).
+obj≈40px -> [(8, 5.0), (16, 2.5), (32, 1.25)] | Öneri: stride 16 seviyesi yeterli (≈2.50 cell).
+obj≈80px -> [(8, 10.0), (16, 5.0), (32, 2.5)] | Öneri: stride 32 seviyesi yeterli (≈2.50 cell).

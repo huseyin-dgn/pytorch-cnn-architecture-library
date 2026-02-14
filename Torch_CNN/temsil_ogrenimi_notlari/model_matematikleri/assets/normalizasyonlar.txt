@@ -1,0 +1,6 @@
+
+Norm	Tensör	μ,σ eksenleri	Affine	Kısa cümle	Not
+0	BatchNorm2d	N×C×H×W	(N,H,W) üzerinden, kanal başına	Var (γ,β)	Batch görür; kanal istatistiği	Küçük batch'te dengesiz olabilir
+1	InstanceNorm2d	N×C×H×W	(H,W) üzerinden, örnek+kanal başına	Opsiyonel	Her görüntü kendi kendini normalize eder	Style transfer'da yaygın
+2	LayerNorm	N×L×D (Transformer) / varyantlar	D (feature) üzerinden, örnek başına	Var (γ,β)	Feature boyutunu normalize eder	Batch bağımsız; Transformer standardı
+3	GroupNorm	N×C×H×W	(C/G,H,W) üzerinden, grup başına	Var (γ,β)	Batch’siz BN; kanalı gruplar	Küçük batch'te BN yerine iyi

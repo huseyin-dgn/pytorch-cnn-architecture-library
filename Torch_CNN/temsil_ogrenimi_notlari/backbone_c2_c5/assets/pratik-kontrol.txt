@@ -1,0 +1,12 @@
+# Pratik kontrol listesi 
+
+Bir backbone’u “doğru ayarladım mı?” kontrol etmek için:
+
+- [ ] C2/C3/C4/C5 stride seviyeleri gerçekten 4/8/16/32 mi?  
+- [ ] Her seviyede kanal sayıları mantıklı artıyor mu?  
+- [ ] Neck’in beklediği input channel’lar doğru mu? (FPN lateral conv input)  
+- [ ] Küçük nesne varsa P3/P2 (stride 8/4) gerçekten var mı?  
+- [ ] Çok büyük nesne hedefleniyorsa P6/P7 gerek var mı?  
+- [ ] FPS/VRAM bütçesi içinde mi?
+
+Bu kontrol listesi backbone–neck uyumsuzluğunu erken yakalar.

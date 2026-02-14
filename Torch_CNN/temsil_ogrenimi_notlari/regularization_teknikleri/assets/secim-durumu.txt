@@ -1,0 +1,19 @@
+#  “Bir teknik seçecek olsak hangisi?” 
+
+Genel CNN/YOLO backbone bağlamında tek bir teknik seçilecekse:
+
+✅ **DropPath (Stochastic Depth)**
+
+**Neden?**
+- Residual tabanlı modern mimarilerde en “taşınabilir” regularizer.
+- Derinlik boyunca implicit ensemble etkisi güçlü.
+- DropBlock’a göre çoğu zaman daha az nazlı ayar ister.
+
+**İstisnalar**
+- Uzamsal görev + lokal overfit çok belirginse → **DropBlock** daha direkt vurabilir.
+- Hafif/ucuz reg gerekiyorsa → **Spatial Dropout** en pratik seçenek olabilir.
+
+Pratik kural:
+> Derin residual ağ = önce DropPath  
+> Uzamsal ezber/detection = DropBlock ikinci aday  
+> Hafif reg = Spatial Dropou

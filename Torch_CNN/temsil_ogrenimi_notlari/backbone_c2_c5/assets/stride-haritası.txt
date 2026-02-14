@@ -1,0 +1,4 @@
+C2: stride= 4 -> H/4  x W/4
+C3: stride= 8 -> H/8  x W/8
+C4: stride=16 -> H/16 x W/16
+C5: stride=32 -> H/32 x W/32

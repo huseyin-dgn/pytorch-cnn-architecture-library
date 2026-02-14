@@ -1,0 +1,17 @@
+# Kısa hyperparametre notları
+
+### DropPath
+- p genelde derinliğe göre artan schedule ile kullanılır:
+  - erken bloklarda düşük
+  - son bloklarda yüksek
+
+### DropBlock
+- block_size feature map çözünürlüğüne göre seçilir
+- drop_prob küçükten başlatılır (0.05 → 0.2)
+- çoğunlukla orta/derin katmanlarda
+
+### Spatial Dropout
+- p genelde 0.1–0.3 aralığında
+- erken katmanlarda agresif p risklidir
+
+> Her zaman: tek değişken - tek deney (controlled ablation).

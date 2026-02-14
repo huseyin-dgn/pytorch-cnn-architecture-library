@@ -1,0 +1,4 @@
+SE: GAP → MLP(C→C/r→C) → sigmoid → x*wc (channel reweight)
+ECA: GAP → 1D conv (kanal üzerinde) → sigmoid → x*wc (param az)
+CBAM: Channel(avg+max)→MLP→sigmoid; sonra Spatial(avg+max over C)→conv→sigmoid
+CoordAtt: Pool H ve W ayrı → hafif projeksiyon → sigmoid → x*(w_h,w_w) (konum koru)

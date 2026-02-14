@@ -1,0 +1,7 @@
+
+Exp	Değişiklik	Neden	Ölç
+0	E0	Baseline	Referans	mAP_s/m/l, FPS, VRAM
+1	E1	BN→GN (backbone+neck)	small batch stabilite	mAP + run std
+2	E2	Backbone mid: SE	channel seçicilik	mAP, latency
+3	E3	Neck: CBAM/CoordAtt	fusion iyileştirme	mAP_small, FP
+4	E4	DropPath schedule	derin reg	val mAP, overfit gap

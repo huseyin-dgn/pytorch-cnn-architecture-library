@@ -1,0 +1,21 @@
+**Data**
+- [ ] Train/val leakage (hash/pHash)
+- [ ] Label mapping doğru
+- [ ] BBox/mask valid (bounds, negative yok)
+- [ ] Class distribution ve imbalance raporu
+- [ ] Small/medium/large oranı raporu
+
+**Pipeline**
+- [ ] Resize/letterbox dönüşümü test edildi
+- [ ] Augment sonrası bbox geçerli
+- [ ] Normalization range doğru (0-1 / mean-std)
+
+**Model**
+- [ ] Batch size → BN/GN kararı
+- [ ] Output shape ve loss match
+- [ ] Params/FLOPs budget uyumlu
+
+**Sanity Runs**
+- [ ] 1 batch overfit (50–200 iter)
+- [ ] Loss NaN/Inf yok
+- [ ] Grad norm patlamıyor

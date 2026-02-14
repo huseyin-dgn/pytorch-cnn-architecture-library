@@ -1,0 +1,8 @@
+- bbox area histogram (relative area)
+- small/medium/large ratio
+- bbox aspect ratio histogram
+- image resolution histogram
+- avg brightness/contrast distribution
+- blur score distribution (var(Laplacian))
+- class frequency (imbalance)
+- overlap/crowd: mean IoU between boxes

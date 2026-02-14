@@ -1,0 +1,26 @@
+
+== data ==
+- num_images, num_labels
+- class_counts
+- train/val leakage check (hash/pHash)
+- resolution distribution (H,W)
+- brightness/contrast histogram
+- blur score (variance of Laplacian)
+- noise proxy (high-frequency energy)
+
+== detection_specific ==
+- bbox area distribution
+- bbox width/height distribution
+- small/medium/large ratio
+- aspect ratio distribution of boxes
+- crowd/overlap stats (IoU among boxes)
+
+== pipeline ==
+- resize/letterbox correctness (bbox transform test)
+- augmentation sanity (bbox stays valid?)
+- normalization correctness (mean/std ranges)
+
+== compute ==
+- expected batch size
+- BN vs GN decision
+- fps/latency target

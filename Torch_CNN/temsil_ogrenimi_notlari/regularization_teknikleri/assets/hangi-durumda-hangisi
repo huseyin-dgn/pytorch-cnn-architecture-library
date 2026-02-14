@@ -1,0 +1,19 @@
+
+# Hangi durumda hangisi?
+
+### Spatial Dropout
+- ✅ Kanal korelasyonu yüksek → kanal bazlı robustluk
+- ✅ Çok ucuz
+- ❌ Agresif p kapasiteyi düşürür
+
+### DropBlock
+- ✅ Uzamsal ezberi kırar (lokal pattern bağımlılığı)
+- ✅ Detection/segmentation’da sık işe yarar
+- ❌ hyperparametre (block_size, drop_prob) daha hassas
+
+### DropPath
+- ✅ Derin residual ağlarda “genel amaç” güçlü regularizer
+- ✅ Modern backbone’larda yaygın; tuning çoğu zaman daha stabil
+- ❌ Residual yapı yoksa etkisi sınırlı
+
+> Hepsinde ortak: Val/test artışı hedeflenir; training loss genelde yükselir (normal).

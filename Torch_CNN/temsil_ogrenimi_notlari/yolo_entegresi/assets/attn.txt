@@ -1,0 +1,4 @@
+SE: GAP → MLP → sigmoid → x*wc (channel)
+ECA: GAP → 1D conv(ch) → sigmoid → x*wc
+CBAM: Channel → Spatial (sigmoid mask)
+CoordAtt: H ve W eksenlerinde ayrı özet → konum koru

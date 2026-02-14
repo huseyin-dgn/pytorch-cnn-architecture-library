@@ -1,0 +1,19 @@
+Classification 224×224, strides=[2,2,2,2,2] (total 32×)
+('stage1', 112, 112, 2)
+('stage2', 56, 56, 4)
+('stage3', 28, 28, 8)
+('stage4', 14, 14, 16)
+('stage5', 7, 7, 32)
+
+Detection 640×640, strides=[2,2,2,2,2] (P3=8, P4=16, P5=32 seçersin)
+('stage1', 320, 320, 2)
+('stage2', 160, 160, 4)
+('stage3', 80, 80, 8)
+('stage4', 40, 40, 16)
+('stage5', 20, 20, 32)
+
+Segmentation örnek: total stride 16× hedefi için strides=[2,2,2,2]
+('stage1', 256, 256, 2)
+('stage2', 128, 128, 4)
+('stage3', 64, 64, 8)
+('stage4', 32, 32, 16)

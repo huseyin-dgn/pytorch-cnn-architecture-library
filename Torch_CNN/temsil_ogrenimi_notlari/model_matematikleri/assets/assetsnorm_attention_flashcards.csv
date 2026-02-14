@@ -1,0 +1,8 @@
+Front,Back
+"BatchNorm μ,σ hangi eksenlerden alınır?","(N,H,W) üzerinden; kanal başına"
+"InstanceNorm μ,σ hangi eksenlerden alınır?","(H,W) üzerinden; örnek+kanal başına"
+"LayerNorm μ,σ hangi eksenlerden alınır?",Feature boyutu (D) üzerinden; örnek başına
+GroupNorm fikri nedir?,Kanalları G gruba böl; grup+spatial üzerinden normalize et
+SE blok şablonu nedir?,GAP → MLP → sigmoid → x*wc
+CBAM sırası nedir?,Channel attention → Spatial attention
+Self-attention core formülü?,"A=softmax(QK^T/sqrt(d)), Y=AV"
